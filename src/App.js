@@ -22,6 +22,10 @@ class App extends React.Component {
     this.setState({column: this.state.column + 1})
   }
 
+  selectColor = (event) => {
+    this.setState({color: event.target.value})
+  }
+
   render() {
     return (
         <div className="App">
@@ -30,11 +34,11 @@ class App extends React.Component {
             <button id="addColumns" onClick={this.createColumn}>Add Column</button>
             <label htmlFor="clrSelection">Color Selection</label>
 
-            <select id="clrSelection">
+            <select id="clrSelection" onClick={this.selectColor}>
               <option value="transparent">None</option>
-              <option value="blue" id="op1">Blue</option>
-              <option value="red" id="op2">Red</option>
-              <option value="yellow" id="op3">Yellow</option>
+              <option value="blue">Blue</option>
+              <option value="red">Red</option>
+              <option value="yellow">Yellow</option>
             </select>
           </div>
 
@@ -42,6 +46,7 @@ class App extends React.Component {
             <Table
               row={this.state.row}
               column={this.state.column}
+              color={this.state.color}
               />
           </div>
         </div>
