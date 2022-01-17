@@ -6,13 +6,13 @@ class Table extends React.Component {
 
     render() {
         const rowArr = []
-            for (let i = 0; i < this.props.row; i++) {
-                rowArr.push(<TableRow column={this.props.column}/>)
-            }
+        for (let i = 0; i < this.props.row; i++) {
+            rowArr.push(<TableRow column={this.props.column} color={this.props.color}/>)
+        }
         return (
-          <div className="tableGrid">
-              {rowArr}
-          </div>
+            <div className="tableGrid">
+                {rowArr}
+            </div>
         );
     }
 }
